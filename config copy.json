@@ -1,0 +1,35 @@
+{
+  "Router": {
+      "ROUTER_PORT": "COM1",
+      "ROUTER_BAUD_RATE": "57600",
+      "R_HOTWORD_1": "Please choose the operation",
+      "COMM_1": "2",
+      "R_HOTWORD_2": "some response",
+      "COMM_2": "000",
+      "R_HOTWORD_3": "",
+      "COMM_3": "000",
+      "R_HOTWORD_4": "",
+      "COMM_4": "000"
+  },
+  "Gsm": {
+      "GSM_PORT": "COM2",
+      "GSM_BAUD_RATE": "115200",
+      "COMM_1": "AT",
+      "G_HOTWORD_1": "OK",
+      "COMM_2": "AT+DIALMODE=0",
+      "G_HOTWORD_2": "OK",
+      "COMM_3": "AT$MYCONFIG='usbnetmode',0",
+      "G_HOTWORD_3": "OK",
+      "COMM_4": "AT+DIALMODE?",
+      "G_HOTWORD_4": "AT+DIALMODE=0"
+  },
+  "Tft_Ip": {
+      "TFTIP": "10.10.10.10",
+      "FILE_PATH": "demo.bin",
+      "FILE_NAME": "/home/vicky"
+  },
+  "Voltage": {
+      "VOLTAGE_PORT": "COM1",
+      "BAUD_RATE": "115200"
+  }
+}

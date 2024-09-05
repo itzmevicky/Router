@@ -1,0 +1,238 @@
+flash manufacture id: ef, device id 40 19
+Received data: info id : ef info->jedec_id :40160000 buf[1]:40 buf[2]:19
+Received data: info id : ef info->jedec_id :40170000 buf[1]:40 buf[2]:19
+Received data: info id : ef info->jedec_id :40180000 buf[1]:40 buf[2]:19
+Received data: info id : ef info->jedec_id :40190000 buf[1]:40 buf[2]:19
+Received data: find flash: W25Q256FV
+Received data: ============================================
+Received data: Ralink UBoot Version: 1.0
+Received data: --------------------------------------------
+Received data: ASIC 7628_MP (Port5<->None)
+Received data: DRAM component: 1024 Mbits DDR, width 16
+Received data: DRAM bus: 16 bit
+Received data: Total memory: 128 MBytes
+Received data: Flash component: SPI Flash
+Received data: Date:May 23 2020  Time:14:42:28
+Received data: ============================================
+Received data: icache: sets:512, ways:4, linesz:32 ,total:65536
+Received data: dcache: sets:256, ways:4, linesz:32 ,total:32768
+Received data: RESET MT7628 PHY!!!!!!
+Received data: _    _   _        _  __  ______     __    ___     ___    _   _
+Received data: | |  | | | |      | |/ / |____  |   / /   |__ \   / _ \  | \ | |
+Received data: | |__| | | |      | ' /      / /   / /_      ) | | (_) | |  \| |
+Received data: |  __  | | |      |  <      / /   | '_ \    / /   > _ <  | . ` |
+Received data: | |  | | | |____  | . \    / /    | (_) |  / /_  | (_) | | |\  |
+Received data: |_|  |_| |______| |_|\_\  /_/      \___/  |____|  \___/  |_| \_|
+Received data: -------------------------------------------------------------------------
+Received data: https://github.com/gnubee-git
+Received data: -------------7628N build May 23 2020 14:42:28--------------------
+Received data: -------------------------------------------------------------------------
+Received data: Please choose the operation:
+Received data: 1: Load system code to SDRAM via TFTP.
+Received data: 2: Load system code then write to Flash via TFTP.
+Received data: 3: Boot system code via Flash (default).
+Received data: 4: Entr boot command line interface.
+Received data: 5: Load system code then write to Flash via Httpd.
+Received data: 7: Load Boot Loader code then write to Flash via Serial.
+Received data: 9: Load Boot Loader code then write to Flash via TFTP.
+Received dat 0 
+Received data: 3: System Boot system code via Flash.
+Received data: ## Booting image at bc050000 ...
+Received data: Image Name:   MIPS OpenWrt Linux-5.15.162
+Received data: Image Type:   MIPS Linux Kernel Image (lzma compressed)
+Received data: Data Size:    2313266 Bytes =  2.2 MB
+Received data: Load Address: 80000000
+Received data: Entry Point:  80000000
+Received data: Verifying Checksum ... OK
+Received data: Uncompressing Kernel Image ...
+Received data: OK
+Received data: No initrd
+Received data: ## Transferring control to Linux (at address 80000000) ...
+Received data: ## Giving linux memsize in MB, 128
+Received data: Starting kernel ...
+Received data: [    0.000000] Linux version 5.15.162 (builder@buildhost) (mipsel-openwrt-linux-musl-gcc (OpenWrt GCC 12.3.0 r24012-d8dd03c46f) 12.3.0, GNU ld (GNU Binutils) 2.40.0) #0 Mon Jul 15 22:14:18 2024
+Received data: [    0.000000] Board has DDR2
+Received data: [    0.000000] Analog PMU set to hw control
+Received data: [    0.000000] Digital PMU set to hw control
+Received data: [    0.000000] SoC Type: MediaTek MT7628AN ver:1 eco:2
+Received data: [    0.000000] printk: bootconsole [early0] enabled
+Received data: [    0.000000] CPU0 revision is: 00019655 (MIPS 24KEc)
+Received data: [    0.000000] MIPS: machine is HILINK HLK-7628N
+Received data: [    0.000000] Initrd not found or empty - disabling initrd
+Received data: [    0.000000] Primary instruction cache 64kB, VIPT, 4-way, linesize 32 bytes.
+Received data: [    0.000000] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+Received data: [    0.000000] Zone ranges:
+Received data: [    0.000000]   Normal   [mem 0x0000000000000000-0x0000000007ffffff]
+Received data: [    0.000000] Movable zone start for each node
+Received data: [    0.000000] Early memory node ranges
+Received data: [    0.000000]   node   0: [mem 0x0000000000000000-0x0000000007ffffff]
+Received data: [    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000007ffffff]
+Received data: [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 32480
+Received data: [    0.000000] Kernel command line: console=ttyS0,57600 rootfstype=squashfs,jffs2
+Received data: [    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes, linear)
+Received data: [    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes, linear)
+Received data: [    0.000000] Writing ErrCtl register=00048710
+Received data: [    0.000000] Readback ErrCtl register=00048710
+Received data: [    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+Received data: [    0.000000] Memory: 120936K/131072K available (5980K kernel code, 605K rwdata, 748K rodata, 1232K init, 217K bss, 10136K reserved, 0K cma-reserved)
+Received data: [    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Received data: [    0.000000] NR_IRQS: 256
+Received data: [    0.000000] intc: using register map from devicetree
+Received data: [    0.000000] CPU Clock: 580MHz
+Received data: [    0.000000] timer_probe: no matching timers found
+Received data: [    0.000000] clocksource: MIPS: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6590553264 ns
+Received data: [    0.000002] sched_clock: 32 bits at 290MHz, resolution 3ns, wraps every 7405115902ns
+Received data: [    0.015481] Calibrating delay loop... 385.84 BogoMIPS (lpj=1929216)
+Received data: [    0.087661] pid_max: default: 32768 minimum: 301
+Received data: [    0.097968] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Received data: [    0.112330] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Received data: [    0.136757] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+Received data: [    0.156167] futex hash table entries: 256 (order: -1, 3072 bytes, linear)
+Received data: [    0.169823] pinctrl core: initialized pinctrl subsystem
+Received data: [    0.182331] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+Received data: [    0.194699] thermal_sys: Registered thermal governor 'step_wise'
+Received data: [    0.213307] clocksource: Switched to clocksource MIPS
+Received data: [    0.236996] NET: Registered PF_INET protocol family
+Received data: [    0.246844] IP idents hash table entries: 2048 (order: 2, 16384 bytes, linear)
+Received data: [    0.262331] tcp_listen_portaddr_hash hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Received data: [    0.279020] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Received data: [    0.294246] TCP established hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Received data: [    0.309390] TCP bind hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Received data: [    0.323322] TCP: Hash tables configured (established 1024 bind 1024)
+Received data: [    0.336073] UDP hash table entries: 256 (order: 0, 4096 bytes, linear)
+Received data: [    0.348956] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes, linear)
+Received data: [    0.363170] NET: Registered PF_UNIX/PF_LOCAL protocol family
+Received data: [    0.374373] PCI: CLS 0 bytes, default 32
+Received data: [    0.387004] workingset: timestamp_bits=14 max_order=15 bucket_order=1
+Received data: [    0.407085] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+Received data: [    0.418573] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+Received data: [    0.439808] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+Received data: [    0.457857] mt7621_gpio 10000600.gpio: registering 32 gpios
+Received data: [    0.469160] mt7621_gpio 10000600.gpio: registering 32 gpios
+Received data: [    0.480409] mt7621_gpio 10000600.gpio: registering 32 gpios
+Received data: [    0.492136] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+Received data: [    0.508237] printk: console [ttyS0] disabled
+Received data: [    0.516734] 10000c00.uartlite: ttyS0 at MMIO 0x10000c00 (irq = 28, base_baud = 2500000) is a 16550A
+Received data: [    0.534560] printk: console [ttyS0] enabled
+Received data: [    0.534560] printk: console [ttyS0] enabled
+Received data: [    0.551044] printk: bootconsole [early0] disabled
+Received data: [    0.551044] printk: bootconsole [early0] disabled
+Received data: [    0.570671] 10000d00.uart1: ttyS1 at MMIO 0x10000d00 (irq = 29, base_baud = 2500000) is a 16550A
+Received data: [    0.590192] spi-mt7621 10000b00.spi: sys_freq: 193333333
+Received data: [    0.629489] spi-nor spi0.0: w25q256 (32768 Kbytes)
+Received data: [    0.639158] 4 fixed-partitions partitions found on MTD device spi0.0
+Received data: [    0.651797] OF: Bad cell count for /palmbus@10000000/spi@b00/flash@0/partitions
+Received data: [    0.666324] OF: Bad cell count for /palmbus@10000000/spi@b00/flash@0/partitions
+Received data: [    0.681294] OF: Bad cell count for /palmbus@10000000/spi@b00/flash@0/partitions
+Received data: [    0.695863] OF: Bad cell count for /palmbus@10000000/spi@b00/flash@0/partitions
+Received data: [    0.710615] Creating 4 MTD partitions on "spi0.0":
+Received data: [    0.720154] 0x000000000000-0x000000030000 : "u-boot"
+Received data: [    0.734261] 0x000000030000-0x000000040000 : "u-boot-env"
+Received data: [    0.746375] 0x000000040000-0x000000050000 : "factory"
+Received data: [    0.759833] 0x000000050000-0x000002000000 : "firmware"
+Received data: [    0.771776] 2 uimage-fw partitions found on MTD device firmware
+Received data: [    0.783623] Creating 2 MTD partitions on "firmware":
+Received data: [    0.793469] 0x000000000000-0x000000234c72 : "kernel"
+Received data: [    0.803306] mtd: partition "kernel" doesn't end on an erase/write block -- force read-only
+Received data: [    0.823022] 0x000000234c72-0x000001fb0000 : "rootfs"
+Received data: [    0.832957] mtd: partition "rootfs" doesn't start on an erase/write block boundary -- force read-only
+Received data: [    0.852579] mtd: setting mtd5 (rootfs) as root device
+Received data: [    0.863930] 1 squashfs-split partitions found on MTD device rootfs
+Received data: [    0.876291] 0x0000005a0000-0x000001fb0000 : "rootfs_data"
+Received data: [    0.920752] rt3050-esw 10110000.esw: mediatek esw at 0xb0110000, irq 25 initialized
+Received data: [    0.937147] mtk_soc_eth 10100000.ethernet eth0: mediatek frame engine at 0xb0100000, irq 5
+Received data: [    0.956235] NET: Registered PF_INET6 protocol family
+Received data: [    0.973990] Segment Routing with IPv6
+Received data: [    0.981383] In-situ OAM (IOAM) with IPv6
+Received data: [    0.989395] NET: Registered PF_PACKET protocol family
+Received data: [    0.999579] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+Received data: [    1.025646] 8021q: 802.1Q VLAN Support v1.8
+Received data: [    1.036377] clk: Disabling unused clocks
+Received data: [    1.056788] VFS: Mounted root (squashfs filesystem) readonly on device 31:5.
+Received data: [    1.077609] Freeing unused kernel image (initmem) memory: 1232K
+Received data: [    1.089367] This architecture does not have kernel memory protection.
+Received data: [    1.102134] Run /sbin/init as init process
+Received data: [    2.134886] init: Console is alive
+Received data: [    2.142351] init: - watchdog -
+Received data: [    3.479717] kmodloader: loading kernel modules from /etc/modules-boot.d/*
+Received data: [    3.580393] kmodloader: done loading kernel modules from /etc/modules-boot.d/*
+Received data: [    3.605546] init: - preinit -
+Received data: [    5.288383] random: jshn: uninitialized urandom read (4 bytes read)
+Received data: [    5.495964] random: jshn: uninitialized urandom read (4 bytes read)
+Received data: [    5.805587] random: jshn: uninitialized urandom read (4 bytes read)
+Received data: [    6.556797] random: procd: uninitialized urandom read (4 bytes read)
+Received data: Press the [f] key and hit [enter] to enter failsafe mode
+Received data: Press the [1], [2], [3] or [4] key and hit [enter] to select the debug level
+Received data: [    9.124914] jffs2: notice: (299) jffs2_build_xattr_subsystem: complete building xattr subsystem, 51 of xdatum (36 unchecked, 15 orphan) and 66 of xref (15 dead, 0 orphan) found.
+Received data: [    9.181853] mount_root: loading kmods from internal overlay
+Received data: [    9.820988] kmodloader: loading kernel modules from /tmp/overlay/upper/etc/modules-boot.d/*
+Received data: [   10.019935] usbcore: registered new interface driver usbfs
+Received data: [   10.031077] usbcore: registered new interface driver hub
+Received data: [   10.041784] usbcore: registered new device driver usb
+Received data: [   10.119224] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Received data: [   10.286388] SCSI subsystem initialized
+Received data: [   10.350200] fsl-ehci: Freescale EHCI Host controller driver
+Received data: [   10.365756] ehci-platform: EHCI generic platform driver
+Received data: [   10.386730] phy phy-10120000.usbphy.0: remote usb device wakeup disabled
+Received data: [   10.400046] phy phy-10120000.usbphy.0: UTMI 16bit 30MHz
+Received data: [   10.410405] ehci-platform 101c0000.ehci: EHCI Host Controller
+Received data: [   10.421824] ehci-platform 101c0000.ehci: new USB bus registered, assigned bus number 1
+Received data: [   10.437744] ehci-platform 101c0000.ehci: irq 26, io mem 0x101c0000
+Received data: [   10.474695] ehci-platform 101c0000.ehci: USB 2.0 started, EHCI 1.00
+Received data: [   10.488818] hub 1-0:1.0: USB hub found
+Received data: [   10.498792] hub 1-0:1.0: 1 port detected
+Received data: [   10.546725] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+Received data: [   10.564907] ohci-platform: OHCI generic platform driver
+Received data: [   10.575920] ohci-platform 101c1000.ohci: Generic Platform OHCI controller
+Received data: [   10.589473] ohci-platform 101c1000.ohci: new USB bus registered, assigned bus number 2
+Received data: [   10.605395] ohci-platform 101c1000.ohci: irq 26, io mem 0x101c1000
+Received data: [   10.689278] hub 2-0:1.0: USB hub found
+Received data: [   10.699759] hub 2-0:1.0: 1 port detected
+Received data: [   10.732773] uhci_hcd: USB Universal Host Controller Interface driver
+Received data: [   10.801111] usbcore: registered new interface driver usb-storage
+Received data: [   10.826357] usbcore: registered new interface driver uas
+Received data: [   10.839954] kmodloader: done loading kernel modules from /tmp/overlay/upper/etc/modules-boot.d/*
+Received data: [   11.372637] block: attempting to load /tmp/jffs_cfg/upper/etc/config/fstab
+Received data: [   11.391510] block: extroot: not configured
+Received data: [   11.401401] mount_root: switching to jffs2 overlay
+Received data: [   11.415811] overlayfs: upper fs does not support tmpfile.
+Received data: [   11.435134] urandom-seed: Seeding with /etc/urandom.seed
+Received data: [   11.585498] procd: - early -
+Received data: [   11.591648] procd: - watchdog -
+Received data: [   12.315506] random: jshn: uninitialized urandom read (4 bytes read)
+Received data: Failed to connect to ubus
+Received data: [   12.498986] procd: - watchdog -
+Received data: [   12.620293] procd: - ubus -
+Received data: [   12.922405] random: ubusd: uninitialized urandom read (4 bytes read)
+Received data: [   12.947654] random: ubusd: uninitialized urandom read (4 bytes read)
+Received data: [   12.981657] procd: - init -
+Received data: Please press Enter to activate this console.
+Received data: [   13.603588] random: usbmode: uninitialized urandom read (4 bytes read)
+Received data: [   13.672851] random: jshn: uninitialized urandom read (4 bytes read)
+Received data: [   13.822199] random: ubusd: uninitialized urandom read (4 bytes read)
+Received data: [   15.296309] kmodloader: loading kernel modules from /etc/modules.d/*
+Received data: [   16.148677] Loading modules backported from Linux version v6.1.97-0-g7753af06eebfb
+Received data: [   16.163773] Backport generated by backports.git v6.1.97-1-0-g2431d56e
+Received data: [   16.266096] usbcore: registered new interface driver ums-alauda
+Received data: [   16.314827] usbcore: registered new interface driver ums-cypress
+Received data: [   16.344833] usbcore: registered new interface driver ums-datafab
+Received data: [   16.384763] usbcore: registered new interface driver ums-freecom
+Received data: [   16.416130] usbcore: registered new interface driver ums-isd200
+Received data: [   16.454910] usbcore: registered new interface driver ums-jumpshot
+Received data: [   16.484839] usbcore: registered new interface driver ums-karma
+Received data: [   16.546620] usbcore: registered new interface driver ums-sddr09
+Received data: [   16.574979] usbcore: registered new interface driver ums-sddr55
+Received data: [   16.607797] usbcore: registered new interface driver ums-usbat
+Received data: [   16.780102] usbcore: registered new interface driver cdc_ether
+Received data: [   17.537122] mt76_wmac 10300000.wmac: ASIC revision: 76280001
+Received data: [   17.606636] mt76_wmac 10300000.wmac: Firmware Version: 20151201
+Received data: [   17.618458] mt76_wmac 10300000.wmac: Build Time: 20151201183641
+Received data: [   17.703356] mt76_wmac 10300000.wmac: firmware init done
+Received data: [   17.892745] mt76_wmac 10300000.wmac: registering led 'mt76-phy0'
+Received data: [   18.156986] PPP generic driver version 2.4.2
+Received data: [   18.198926] NET: Registered PF_PPPOX protocol family
+Received data: [   18.236050] usbcore: registered new interface driver rndis_host
+Received data: [   18.309985] kmodloader: done loading kernel modules from /etc/modules.d/*
+Received data: [   20.806486] urngd: v1.0.2 started.
+Received data: [   23.404707] random: crng init done
+Received data: [   23.411468] random: 39 urandom warning(s) missed due to ratelimiting
