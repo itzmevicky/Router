@@ -249,7 +249,7 @@ class MainWindow(QMainWindow):
         status,serial = self.connect_to_serial_port(port,boud_rate)
         
         if not status:
-            self.ui.router_pyserial.setText(serial)
+            self.ui.router_pyserial.setText("Serial Not Running")
             return
             
         self.ui.router_pyserial.clear()
