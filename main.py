@@ -131,7 +131,7 @@ class MainWindow(QMainWindow):
         self.route_serial_thread = None
         self.tftp_thread = None
         self.route_serial_thread = RouterSerialThread()
-        self.route_serial_thread.start()
+        
         
     # PySerial Router
         self.router_serial = None
@@ -240,14 +240,8 @@ class MainWindow(QMainWindow):
             self.ui.tftp_serial.append(data)
     
     def pyserial_router_connect(self):
+        self.route_serial_thread.start()
         port = self.ui.router_port_list.currentText()
-        
-        
-        # self.config['Router'].update({
-        #      "tty_com_port" : port
-        # })
-        
-        # self.save()
         
         if not port:
             self.popup.show_popup("Port Not Selected.")
@@ -263,11 +257,11 @@ class MainWindow(QMainWindow):
             print("Exception ", serial)
             self.ui.router_pyserial.setText("Serial Not Running")
             return
-            
+        
         self.ui.router_pyserial.clear()
 
-        if status:
-            self.route_serial_thread.data_received.connect(self.display_in_router_pyserial)
+        self.route_serial_thread.router_serial = serial
+        self.route_serial_thread.data_received.connect(self.display_in_router_pyserial)
             
 
     def initialize(self):
