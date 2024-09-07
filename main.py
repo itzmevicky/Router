@@ -12,7 +12,7 @@ import json
 
 
 class RouterSerialThread(QThread):
-    data_received = pyqtSignal(str)  # Signal to emit data back to the UI thread
+    data_received = pyqtSignal(str)  
 
     def __init__(self, router_serial, parent=None):
         super().__init__(parent)
@@ -64,9 +64,8 @@ class TftpServerThread(QThread):
 
     def stop(self):
         self.stop_server()
-        self.quit()  # Properly quit the thread
+        self.quit()  
 
-        
 class SmallPopup(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -184,9 +183,14 @@ class MainWindow(QMainWindow):
         ports = serial.tools.list_ports.comports()
         for port in ports:
             
+            
             self.ui.gsm_port_list.addItem(port.description)
             self.ui.router_port_list.addItem(port.description)
             self.ui.voltage_port_likst.addItem(port.description)
+            
+        com_port = self.config['Router'].get('tty_com_port')
+        if com_port:
+            self.ui.router_port_list.setCurrentText(com_port)
     
     def connect_to_serial_port(self,port,boudrate):
         try:
@@ -223,10 +227,18 @@ class MainWindow(QMainWindow):
         self.ui.gsm_pyserial.append(input_txt)
         
     def send_to_tftp_pyserial(self,data):
-        self.ui.tftp_serial.append(data)
+        if data:
+            self.ui.tftp_serial.append(data)
     
     def pyserial_router_connect(self):
         port = self.ui.router_port_list.currentText()
+        
+        
+        self.config['Router'].update({
+             "tty_com_port" : port
+        })
+        
+        self.save()
         
         if not port:
             self.popup.show_popup("Port Not Selected.")
@@ -264,6 +276,8 @@ class MainWindow(QMainWindow):
         self.ui.tftp_ip_input.setText(self.config.get("Tft_Ip").get('TFTIP'))
         self.ui.tftp_name_input.setText(self.config.get("Tft_Ip").get('FILE_PATH'))
         self.ui.tftp_path_input.setText(self.config.get("Tft_Ip").get('FILE_NAME'))
+        
+        
         
     def get_text_send_to_pyserial(self,command,pyserial):
         text = command.text()
@@ -326,8 +340,10 @@ class MainWindow(QMainWindow):
             'FILE_NAME': self.ui.tftp_name_input.text(),
         })
         
-        with open('config.json', 'w') as json_file:
-            json.dump(self.config, json_file, indent=4)
+        # with open('config.json', 'w') as json_file:
+        #     json.dump(self.config, json_file, indent=4)
+        
+        self.save()
 
         print(self.tftp_thread.isRunning())
         
@@ -347,7 +363,10 @@ class MainWindow(QMainWindow):
             self.route_serial_thread.stop()
             self.route_serial_thread.wait()
             print('Closed Router Thread')
-        
+    
+    def save(self):
+        with open('config.json', 'w') as json_file:
+            json.dump(self.config, json_file, indent=4)
 
     
 if __name__ == "__main__":

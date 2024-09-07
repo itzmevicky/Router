@@ -9,7 +9,8 @@
         "R_HOTWORD_3": "",
         "COMM_3": "000",
         "R_HOTWORD_4": "",
-        "COMM_4": "000"
+        "COMM_4": "000",
+        "tty_com_port": "Silicon Labs CP210x USB to UART Bridge (COM5)"
     },
     "Gsm": {
         "GSM_PORT": "COM2",
