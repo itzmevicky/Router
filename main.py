@@ -181,6 +181,8 @@ class MainWindow(QMainWindow):
                 
     def list_Com_Ports(self):
         ports = serial.tools.list_ports.comports()
+        print(ports)
+        
         for port in ports:
             
             
@@ -188,11 +190,13 @@ class MainWindow(QMainWindow):
             self.ui.router_port_list.addItem(port.description)
             self.ui.voltage_port_likst.addItem(port.description)
             
-        com_port = self.config['Router'].get('tty_com_port')
-        if com_port:
-            self.ui.router_port_list.setCurrentText(com_port)
+        # com_port = self.config['Router'].get('tty_com_port')
+        # if com_port:
+        #     self.ui.router_port_list.setCurrentText(com_port)
     
     def connect_to_serial_port(self,port,boudrate):
+        print('Port' , port)
+        print('Boud Rate' ,boudrate)
         try:
             ser = serial.Serial(port, boudrate, timeout=1)  
             return True, ser
@@ -234,15 +238,17 @@ class MainWindow(QMainWindow):
         port = self.ui.router_port_list.currentText()
         
         
-        self.config['Router'].update({
-             "tty_com_port" : port
-        })
+        # self.config['Router'].update({
+        #      "tty_com_port" : port
+        # })
         
-        self.save()
+        # self.save()
         
         if not port:
             self.popup.show_popup("Port Not Selected.")
             return
+        
+        print('port',port)
         
         port = re.sub(r'[()]', '', port.split()[-1])
         boud_rate = self.config.get('Router').get('ROUTER_BAUD_RATE')
