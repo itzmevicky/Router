@@ -14,7 +14,7 @@ import json
 class RouterSerialThread(QThread):
     data_received = pyqtSignal(str)  
 
-    def __init__(self, router_serial, parent=None):
+    def __init__(self, router_serial= None, parent=None):
         super().__init__(parent)
         self.router_serial = router_serial
         self.running = True
@@ -22,9 +22,13 @@ class RouterSerialThread(QThread):
     def run(self):
         while self.running:
             if self.router_serial and self.router_serial.is_open:
-                data = self.router_serial.readline().decode('utf-8').strip()
-                if data:
-                    self.data_received.emit(data)
+                try:
+                    data = self.router_serial.readline().decode('utf-8').strip()
+                    if data:
+                        self.data_received.emit(data)
+                except Exception as ex:
+                    print(ex)
+                
     
     def stop(self):
         self.running = False
@@ -126,6 +130,8 @@ class MainWindow(QMainWindow):
     # Seperate Thread 
         self.route_serial_thread = None
         self.tftp_thread = None
+        self.route_serial_thread = RouterSerialThread()
+        self.route_serial_thread.start()
         
     # PySerial Router
         self.router_serial = None
@@ -195,8 +201,7 @@ class MainWindow(QMainWindow):
         #     self.ui.router_port_list.setCurrentText(com_port)
     
     def connect_to_serial_port(self,port,boudrate):
-        print('Port' , port)
-        print('Boud Rate' ,boudrate)
+
         try:
             ser = serial.Serial(port, boudrate, timeout=1)  
             return True, ser
@@ -261,10 +266,9 @@ class MainWindow(QMainWindow):
             
         self.ui.router_pyserial.clear()
 
-        if not self.route_serial_thread or not self.route_serial_thread.isRunning():
-            self.route_serial_thread = RouterSerialThread(serial)
+        if status:
             self.route_serial_thread.data_received.connect(self.display_in_router_pyserial)
-            self.route_serial_thread.start()
+            
 
     def initialize(self):
         # Router Commands
