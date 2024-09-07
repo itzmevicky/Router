@@ -181,14 +181,14 @@ class MainWindow(QMainWindow):
                 
     def list_Com_Ports(self):
         ports = serial.tools.list_ports.comports()
-        print(ports)
+        # print(ports)
         
         for port in ports:
+            print(port.device)
             
-            
-            self.ui.gsm_port_list.addItem(port.description)
-            self.ui.router_port_list.addItem(port.description)
-            self.ui.voltage_port_likst.addItem(port.description)
+            self.ui.gsm_port_list.addItem(port.device)
+            self.ui.router_port_list.addItem(port.device)
+            self.ui.voltage_port_likst.addItem(port.device)
             
         # com_port = self.config['Router'].get('tty_com_port')
         # if com_port:
@@ -250,7 +250,7 @@ class MainWindow(QMainWindow):
         
         print('port',port)
         
-        port = re.sub(r'[()]', '', port.split()[-1])
+        # port = re.sub(r'[()]', '', port.split()[-1])
         boud_rate = self.config.get('Router').get('ROUTER_BAUD_RATE')
         status,serial = self.connect_to_serial_port(port,boud_rate)
         
