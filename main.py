@@ -11,6 +11,9 @@ import json
 
 
 
+# sudo nano /etc/network/if-up.d/add_alias_ip
+
+
 class RouterSerialThread(QThread):
     data_received = pyqtSignal(str)  
 
@@ -27,7 +30,7 @@ class RouterSerialThread(QThread):
                     if data:
                         self.data_received.emit(data)
                 except Exception as ex:
-                    print(ex)
+                    print('Exception in Router Thread' , ex)
                 
     
     def stop(self):
@@ -54,8 +57,10 @@ class TftpServerThread(QThread):
             
             self.server.listen(self.server_address, self.port)
             while self.running:
-                self.msleep(100)  # Sleep to avoid busy-waiting
+                self.msleep(100)  
         except Exception as e:
+            print('Exception in TFTP Server ', e)
+            
             self.status_update.emit(f"An error occurred while running the TFTP server: {e}")
         finally:
             self.stop_server()
@@ -206,6 +211,7 @@ class MainWindow(QMainWindow):
             ser = serial.Serial(port, boudrate, timeout=1)  
             return True, ser
         except serial.SerialException as e:
+            
             return False ,e
     
     def display_in_router_pyserial(self,data):
